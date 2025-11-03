@@ -1,6 +1,6 @@
 class Clikd < Formula
-  desc "Modern CLI utility for conventional commit changelog generation"
-  homepage "https://github.com/clikd-inc/cli"
+  desc "Local development environment management for Clikd"
+  homepage "https://github.com/clikd-inc/clikd"
   version "0.1.0"
   license "MIT"
 
