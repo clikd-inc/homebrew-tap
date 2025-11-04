@@ -1,25 +1,25 @@
 class Clikd < Formula
   desc "Local development environment management for Clikd"
   homepage "https://github.com/clikd-inc/cli"
-  version "0.2.1"
+  version "0.2.2"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/clikd-inc/cli/releases/download/v0.2.1/clikd-aarch64-apple-darwin.tar.xz"
-      sha256 "3833426a16058c13836020d393e096b9fc16066258ad4b8d6a25b6dc8ede0164"
+      url "https://github.com/clikd-inc/cli/releases/download/v0.2.2/clikd-aarch64-apple-darwin.tar.xz"
+      sha256 "f08dd761ceec12f9dea899db077151707af4491224c5ec6afb9457bc3a88a9ea"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/clikd-inc/cli/releases/download/v0.2.1/clikd-x86_64-apple-darwin.tar.xz"
-      sha256 "23b1b143578dc4fdc9dd4b7b59d67454060fd1f13781251bd024b92dce687f61"
+      url "https://github.com/clikd-inc/cli/releases/download/v0.2.2/clikd-x86_64-apple-darwin.tar.xz"
+      sha256 "92f6ca11a0c2293c962ddbe43e83050d1c1d8c1e5819023cfdeecf69802b7458"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/clikd-inc/cli/releases/download/v0.2.1/clikd-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "b0a7c3441de1029c0ff1808e739feb8500a679d9caf1ff2fd554bb07ae88ca60"
+      url "https://github.com/clikd-inc/cli/releases/download/v0.2.2/clikd-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "dad62153b594344a317cb612a20ab8fdcb64167f395fdf0bbfe5bdee97dc62fb"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/clikd-inc/cli/releases/download/v0.2.1/clikd-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "ab7404e0e52312f20c9478574f717601a9fbf3bd66c5b57d26ff0ec067bb6ef5"
+      url "https://github.com/clikd-inc/cli/releases/download/v0.2.2/clikd-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "ce1af850f4364781e680cac27eaf2b62c9d4a926c709e06877276fbb6473ee58"
     end
   end
   license "MIT"
@@ -70,11 +70,5 @@ class Clikd < Formula
     # Install any leftover files in pkgshare; these are probably config or
     # sample files.
     pkgshare.install(*leftover_contents) unless leftover_contents.empty?
-  end
-
-  def caveats
-    <<~EOS
-      🤍 Thanks for installing Clikd CLI! If this is your first time using the CLI, be sure to run `clikd login` first.
-    EOS
   end
 end
