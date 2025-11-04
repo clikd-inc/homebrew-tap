@@ -72,3 +72,9 @@ class Clikd < Formula
     pkgshare.install(*leftover_contents) unless leftover_contents.empty?
   end
 end
+
+  def caveats
+    <<~EOS
+      🤍 Thanks for installing Clikd CLI! If this is your first time using the CLI, be sure to run `clikd login` first.
+    EOS
+  end
