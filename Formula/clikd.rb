@@ -1,36 +1,36 @@
 class Clikd < Formula
   desc "Local development environment management for Clikd"
   homepage "https://github.com/clikd-inc/cli"
-  version "0.2.2"
+  version "0.2.3"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/clikd-inc/cli/releases/download/v0.2.2/clikd-aarch64-apple-darwin.tar.xz"
-      sha256 "f08dd761ceec12f9dea899db077151707af4491224c5ec6afb9457bc3a88a9ea"
+      url "https://github.com/clikd-inc/cli/releases/download/v0.2.3/clikd-aarch64-apple-darwin.tar.xz"
+      sha256 "454b39fef7ff334c53f50beb53d8221854c1ea77f11241692994ace9297c401d"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/clikd-inc/cli/releases/download/v0.2.2/clikd-x86_64-apple-darwin.tar.xz"
-      sha256 "92f6ca11a0c2293c962ddbe43e83050d1c1d8c1e5819023cfdeecf69802b7458"
+      url "https://github.com/clikd-inc/cli/releases/download/v0.2.3/clikd-x86_64-apple-darwin.tar.xz"
+      sha256 "425e7929c5f4e22e3d0f9fb53204fe13adc80ab40e0db65e4f8566a82204ee4e"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/clikd-inc/cli/releases/download/v0.2.2/clikd-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "dad62153b594344a317cb612a20ab8fdcb64167f395fdf0bbfe5bdee97dc62fb"
+      url "https://github.com/clikd-inc/cli/releases/download/v0.2.3/clikd-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "c3bd20e05db8fb617f5eb84368334871ca4cf38401c34f6a8f127fdd7d7c2af7"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/clikd-inc/cli/releases/download/v0.2.2/clikd-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "ce1af850f4364781e680cac27eaf2b62c9d4a926c709e06877276fbb6473ee58"
+      url "https://github.com/clikd-inc/cli/releases/download/v0.2.3/clikd-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "721b516d3247e5172a4ada69a8df16c875fb62e3cdb34c841f7fad543c85ff25"
     end
   end
   license "MIT"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin": {},
+    "aarch64-apple-darwin":      {},
     "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin": {},
-    "x86_64-pc-windows-gnu": {},
-    "x86_64-unknown-linux-gnu": {}
-  }
+    "x86_64-apple-darwin":       {},
+    "x86_64-pc-windows-gnu":     {},
+    "x86_64-unknown-linux-gnu":  {},
+  }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -48,18 +48,10 @@ class Clikd < Formula
   end
 
   def install
-    if OS.mac? && Hardware::CPU.arm?
-      bin.install "clikd"
-    end
-    if OS.mac? && Hardware::CPU.intel?
-      bin.install "clikd"
-    end
-    if OS.linux? && Hardware::CPU.arm?
-      bin.install "clikd"
-    end
-    if OS.linux? && Hardware::CPU.intel?
-      bin.install "clikd"
-    end
+    bin.install "clikd" if OS.mac? && Hardware::CPU.arm?
+    bin.install "clikd" if OS.mac? && Hardware::CPU.intel?
+    bin.install "clikd" if OS.linux? && Hardware::CPU.arm?
+    bin.install "clikd" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
