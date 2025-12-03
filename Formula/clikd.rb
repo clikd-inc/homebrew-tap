@@ -1,25 +1,25 @@
 class Clikd < Formula
   desc "Local development environment management for Clikd"
   homepage "https://github.com/clikd-inc/cli"
-  version "0.4.0"
+  version "0.5.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/clikd-inc/cli/releases/download/v0.4.0/clikd-aarch64-apple-darwin.tar.xz"
-      sha256 "c0033937ed32a950db80c7310f77f2d5ce2b6736965a87f4eed9565f30932741"
+      url "https://github.com/clikd-inc/cli/releases/download/v0.5.0/clikd-aarch64-apple-darwin.tar.xz"
+      sha256 "ae68ecfbeae2f8d1cfe66743a33a19a721ccada6e7d9d6dc0f2069f8799dee1e"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/clikd-inc/cli/releases/download/v0.4.0/clikd-x86_64-apple-darwin.tar.xz"
-      sha256 "ea16951fe165599a9d693f6823c601a6761b8fc7720c7cb2869e7d336cfb5ac6"
+      url "https://github.com/clikd-inc/cli/releases/download/v0.5.0/clikd-x86_64-apple-darwin.tar.xz"
+      sha256 "e639391a963a9b2aad8aca9b95b1490eed1caba770a2002dfcef86e97be355cf"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/clikd-inc/cli/releases/download/v0.4.0/clikd-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "a39fc791a69559bb2a865be56e51a1acbe1eb6fbba21c7726d1dd79ea28bd313"
+      url "https://github.com/clikd-inc/cli/releases/download/v0.5.0/clikd-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "6a4f00c2d7b625452c756f1f24a79d21efc9521acf77477bfece3dbefa690ed0"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/clikd-inc/cli/releases/download/v0.4.0/clikd-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "1c10f7f08cc4023b3380920fbefdbe46b46bfcb1fe2f8d7a96138c5bee3c8dd5"
+      url "https://github.com/clikd-inc/cli/releases/download/v0.5.0/clikd-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "dcad8fd56417497241eee39f065cb01331bd8125bb1b06aee486dfe725e08eab"
     end
   end
   license "MIT"
